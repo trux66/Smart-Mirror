@@ -10,9 +10,9 @@ import traceback
 import feedparser
 from PIL import Image, ImageTk
 
-ip = '<IP>'
+ip = '66.42.194.58'
 country_code = 'us'
-weather_api_token = '<TOKEN>'
+weather_api_token = '51c38f45670579cb4b2de208390c9238'
 
 
 # maps open weather icons to
@@ -115,7 +115,7 @@ class Weather(Frame):
             location2 = "%s, %s" % (location_obj['city'], location_obj['region_code'])
 
             # get weather
-            weather_req_url = "https://api.forecast.io/forecast/%s/%s,%s" % (weather_api_token, lat,lon)
+            weather_req_url = "https://api.darksky.net/forecast/%s/%s,%s" % (weather_api_token, lat,lon)
             r = requests.get(weather_req_url)
             weather_obj = json.loads(r.text)
 
